@@ -52,14 +52,30 @@ body {
 }
 .nav-bar li {
   list-style: none;
+  position: relative;
 }
+
 .nav-bar li a {
   text-decoration: none;
   color: var(--color);
   letter-spacing: 2px;
 }
-.nav-bar li a:hover {
-  color: var(--h-color);
+.nav-bar a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: var(--h-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.2s all linear;
+
+}
+.nav-bar a:hover::after {
+    width: 100%;
+}
+.logo-li a:hover::after{
+    width: 0 !important;
 }
 .header{
     padding: 25px 10px 0 20px;
@@ -146,14 +162,24 @@ padding: 20px;
 }
 .level li{
     list-style: none;
+    position: relative;
 }
 .level a{
     text-decoration: none;
     color: var(--color);
 }
-.level a:hover{
-   color: var(--h-color);
-   font-weight: 700;
+.level a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: var(--h-color);
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.2s all linear;
+}
+.level a:hover::after{
+   width: 100%;
 }
 
 /* Beginner Grid */
