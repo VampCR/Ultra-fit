@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultra Fit</title>
+    <link rel="stylesheet" href="health.css" />
+    <link rel="shortcut icon" href="/Assests/More/ultra-fit-logoo.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- Nav-bar -->
+    <div class="main">
+      <div class="navbar">
+        <ul>
+          <li class="logo-li">
+            <a href="index.html">
+              <img src="/Assests/More/ultra-fit-main-logo.png" alt="Ultra-Fit" />
+            </a>
+          </li>
+          <li><a href="index.html">HOME</a></li>
+          <!-- <li><a href="#about-us">ABOUT US</a></li> -->
+          <li><a href="health.html">HEALTH</a></li>
+          <li><a href="/">SHOP</a></li>
+          <li><a href="index.html#about-us">ABOUT US</a></li>
+        </ul>
+      </div>
+      <div class="main-box"></div>
+    </div>
+
+    <!-- Main Body -->
+    <div class="main-body">
+
+      <!-- Bar-->
+      <div class="level">
+        <ul>
+          <li><a href="#bmi-calculator">Calculate BMI</a></li>
+          <li><a href="#caloric-needs">Calorie Needs</a></li>
+          <li><a href="#exercise-guide">Exercise Guide</a></li>
+        </ul>
+      </div>
+
+      <!-- BMI Calculator-->
+
+      <section id="bmi-calculator" class="page page-light">
+        <h1>BODY MASS INDEX (BMI)</h1><br />
+        <p
+          >Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.
+          Calculate your BMI to determine your goal. </p
+        ><br /><hr /><br />
+        <h1>BMI Calculator</h1>
+        <div class="container">
+          <form id="bmi-form">
+            <label for="bmi-height">Your Height:</label><br />
+            <input type="text" id="bmi-height" placeholder="Centimeters" /><br />
+            <label for="bmi-weight">Your Weight:</label><br />
+            <input type="text" id="bmi-weight" placeholder="Kilograms" /><br /><br />
+            <button id="bmi-submit" class="btn btn-blue">Submit</button>
+          </form>
+  
+          <div class="list-box">
+            <h4 id="bmi-result">YOUR BMI = [Not Entered]</h4><br />
+            <h3>BMI Categories:</h3>
+            <ul>
+              <li>Underweight: BMI &lt; 18.5 (Gain weight)</li>
+              <li>Normal weight: 18.5 &lt; BMI &lt; 24.9 (Maintain)</li>
+              <li>Overweight: BMI &gt; 24.9 (Loss weight)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calorie Need Calculator -->
+
+       <section id="caloric-needs" class="page page-dark">
+      <h1>CALORIE NEEDS</h1><br />
+      <p
+        >The Calorie Calculator can be used to estimate the number of calories a person needs to consume each day. This
+        calculator can also provide some simple guidelines for gaining or losing weight.</p
+      >
+      <br /><hr /><br />
+      <h1>Calorie Needing Calculator</h1>
+      <div class="container">
+        <form id="calorie-form">
+          Gender: <br />
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label><br />
+          <label for="age">Age:</label><br />
+          <input type="text" id="age" placeholder="15-80 years" /><br />
+          <label for="calorie-height">Height:</label><br />
+          <input type="text" id="calorie-height" placeholder="Centimeters" /><br />
+          <label for="calorie-weight">Weight:</label><br />
+          <input type="text" id="calorie-weight" placeholder="Kilograms" /><br />
+          <label for="activity">Activity:</label><br />
+          <select name="activity" id="activity">
+            <option value="basal">Basal Metabolic Rate (BMR)</option>
+            <option value="sedentary">Sedentary: little or no exercise</option>
+            <option value="light">Light: exercise 1-3 times/week</option>
+            <option value="moderate">Moderate: exercise 4-5 times/week</option>
+            <option value="active">Active: daily exercise or intense exercise 3-4 times/week</option>
+            <option value="very-active">Very Active: intense exercise 6-7 times/week</option>
+            <option value="extra-active">Extra Active: very intense exercise daily or physical job</option> </select
+          ><br /><br />
+          <button id="calorie-submit" class="btn btn-blue">Submit</button>
+        </form>
+        <div class="list-box">
+          <br /><h4 id="calorie-result">YOUR CALORIE NEEDING = [Not Entered]</h4><br />
+          <h3>Guideline:</h3>
+          <ul>
+            <li>To Lose Weight: Take 250-500 minus your calorie needing.</li>
+            <li>To Maintain: Take 0-200 minus or 0-200 plus your calorie needing.</li>
+            <li>To Gain Weight: Take 250-500 plus your calorie needing.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+      <!-- Exercise Guide -->
+
+     <section id="exercise-guide" class="page page-dark">
+      <h1>EXERCISE GUIDE</h1><br />
+      <p>Select an exercise to learn how to do it.</p><br /><hr /><br />
+      <select id="exercise-select" aria-placeholder="Select an exercise">
+        <option value="none" selected disabled hidden>Select an exercise</option>
+        <option value="air-squat">Air Squat</option>
+        <option value="barbell-row">Barbell Row</option>
+        <option value="bench-press">Bench Press</option>
+        <option value="burpee">Burpees</option>
+        <option value="cable-cross">Cable Crossover</option>
+        <option value="cable-pullover">Cable Pullover</option>
+        <option value="calf-raise">Calf Raise</option>
+        <option value="chair-dips">Chair Dips</option>
+        <option value="clean-and-press">Clean and Press</option>
+        <option value="crunch">Crunches</option>
+        <option value="deadlift">Deadlift</option>
+        <option value="decline-pushup">Decline Pushups</option>
+        <option value="dumbbel-curl">Dumbbel Curl</option>
+        <option value="front-raise">Front Raises</option>
+        <option value="front-squat">Front Squat</option>
+        <option value="hammer-curl">Hammer Curl</option>
+        <option value="high-knee">High Knees</option>
+        <option value="incline-bench-press">Incline Bench Press</option>
+        <option value="incline-dumbbell-press">Incline Dumbbell Bench Press</option>
+        <option value="jumping-jack">Jumping Jacks</option>
+        <option value="jump-squat">Jump Squat</option>
+        <option value="lateral-raise">Lateral Raises</option>
+        <option value="lat-pulldown">Lat Pulldown</option>
+        <option value="leg-curl">Leg Curl</option>
+        <option value="leg-extension">Leg Extension</option>
+        <option value="lunge">Lunge</option>
+        <option value="muscle-up">Muscle Up</option>
+        <option value="overhead-press">Overhead Press</option>
+        <option value="overhead-tricep">Overhead Tricep Extension</option>
+        <option value="pullup">Pullup</option>
+        <option value="pushup">Pushups</option>
+        <option value="shrug">Shrugs</option>
+        <option value="skull-crusher">Skull Crusher</option>
+        <option value="sl-deadlift">SL Deadlift</option>
+        <option value="squat">Squat</option>
+        <option value="squat-clean-and-press">Squat Clean and Press</option>
+        <option value="wall-sit">Wall Sit</option>
+        <option value="z-bar-curl">Z-Bar Curl</option> </select
+      ><br /><br />
+      <button class="btn btn-last" id="show-exercise">Show</button><br /><br /><br />
+      <img id="exercise-pic" src="/Assests/More/stick-mon.png" alt="exercise" height="360px" />
+    </section>
+    </div>
+
+    <script src="health.js"></script>
+  </body>
+</html>
