@@ -6,11 +6,12 @@
     <title>Ultra Fit</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="/Assests/More/ultra-fit-logoo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
     <!-- Nav-bar -->
     <div class="main">
-      <nav class="navbar">
+      <div class="navbar">
         <ul>
           <li class="logo-li">
             <a href="index.html">
@@ -22,9 +23,58 @@
           <li><a href="/">SHOP</a></li>
           <li><a href="#about-us">ABOUT US</a></li>
         </ul>
-      </nav>
+        <button id="loginBtn" class="login-btn">LOGIN</button>
+      </div>
+      <div class="text">
+      
+      </div>
       <div class="main-box"></div>
     </div>
+<!-- form login & sign up -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+      <span class="close" id="loginClose">&times;</span>
+      <form id="loginForm" class="login-form">
+          <h2>Login</h2>
+          <div class="inputbox">
+          <input type="text" id="username" name="username" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+          </div>
+          <div class="inputbox">
+          <input type="password" id="password" name="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt'></i>
+          </div>
+          <button type="submit">Login</button>
+          <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+      </form>
+  </div>
+</div>
+
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+      <span class="close" id="signupClose">&times;</span>
+      <form id="signupForm" class="signup-form">
+          <h2>Sign Up</h2>
+          <div class="inputbox">
+          <input type="email" id="signupEmail" name="email" placeholder="Email" required>
+          <i class='bx bxl-gmail'></i>
+          </div>
+          <div class="inputbox">
+          <input type="text" id="signupUsername" name="username" placeholder="Username" required>
+          <i class='bx bxs-user'></i>
+          </div>
+          <div class="inputbox">
+            <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+          </div>
+          <div class="inputbox">
+          <input type="password" id="signupConfirmPassword" name="confirm_password" placeholder="Confirm Password" required>
+          <i class='bx bxs-lock-open-alt' ></i>
+          </div>
+          <button type="submit">Sign Up</button>
+      </form>
+  </div>
+</div>
 
     <!-- Main Body -->
     <div class="main-body">
@@ -119,7 +169,7 @@
           </div>
         </div>
       </div>
-    </section>
+      </section>
       <!-- intermidate section -->
        <section id="intermediate">
         <h3 class="i-head">Intermediate</h3>
@@ -232,7 +282,7 @@
             </div>
         </div>
        </section>
-    </div>
+      </div>
 
     <div class="about-us">
         <section id="about-us">
@@ -264,4 +314,3 @@
    <script src="script.js"></script>
   </body>
 </html>
-<!-- Ultra Fit helps you to improve your sports experience. Here, you can get informed about your body and your health, determine the most suitable target for you, learn your calorie needs according to your goal, make an exercise plan and see exercise forms accordingly. <strong>If you quit you gay !</strong> -->

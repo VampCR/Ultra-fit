@@ -1,207 +1,248 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  :root {
-    --color: #ffffff;
-    --bg-color: #242222;
-    --h-color: #4dd72e;
-    --h-box: #73e662;
-    --grid-color:#2d2b2b;
-  }
-
-  form {
-    background: #191a1d;
-    color: var(--color);
-    padding: 30px;
-    /* text-align: center; */
-    margin: 2rem;
-    border-radius: 32px;
-    width: 35%;
-    box-shadow: 0 0 3px #000000;
-    line-height: 25px;
-  }
-  input[type="radio"]{
-    border-radius: none;
-  }
-  input[type="text"], select {
-    color: var(--color);
-    font-size: 12px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: none;
-    outline: none;
-    background: none;
-    box-shadow: inset 4px 4px 4px black;
-    border-radius: 25px;
-    background-clip: padding-box;
-    align-items: center;
-  }
-  select option{
-    color: var(--color);
-    background-color: var(--grid-color);
-  }
-  input:focus {
-    padding-bottom: 15px;
-  }
-  input::placeholder, select::placeholder {
-    color: #a8a7a4;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    font-weight: 700;
-    letter-spacing: .3px;
-  }
-  
-  input:focus::placeholder, select::placeholder {
-    color: var(--color);
-  }
-
-  
-  select {
-    width: 90%;
-    padding: 8px;
-    border-radius: 8px;
-    margin-bottom: 0.6rem;
-  }
-  
-  label {
-    margin-bottom: 0.6rem;
-    margin-right: 0.4rem;
-  }
-
-  body {
-    background: var(--bg-color);
-    font-family: Segoe UI;
-    overflow-x:hidden; 
-    color: var(--color);
-  }
-  .main {
-    height: 90vh;
-    width: 100vw;
-    position: relative;
-  }
-  .main-box {
-    background-image: url(Assests/images/bg-health.jpeg);
-    height: 90vh;
-    width: 100vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
-    filter: brightness(0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  /* Nav bar section */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 0;
-    background-color: transparent;
-    transform: translateY(0);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    z-index: 1000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.navbar.scroll-up{
-    background-color: var(--bg-color);
+:root {
+  --color: #ffffff;
+  --bg-color: #242222;
+  --h-color: #4dd72e;
+  --h-box: #73e662;
+  --grid-color: #2d2b2b;
 }
-  .navbar ul {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-  }
-  .navbar ul img {
-    width: 150px;
-    padding: 15px;
-  }
-  .navbar li {
-    list-style: none;
-    position: relative;
-  }
-  
-  .navbar li a {
-    text-decoration: none;
-    color: var(--color);
-    letter-spacing: 2px;
-    font-size: 15px;
-  }
-  .navbar a::after{
-      content: "";
-      width: 0%;
-      height: 3px;
-      background: var(--h-color);
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      transition: 0.2s all linear;
-  
-  }
-  .navbar a:hover::after {
-      width: 100%;
-  }
-  .logo-li a:hover::after{
-      width: 0 !important;
-  }
-  .header{
-      padding: 25px 10px 0 20px;
-      color: var(--color);
-      margin-bottom: 15px;
-  }
-  h1, h2, h3{
-      font-weight: 500;
-      letter-spacing: 2px;
-  }
-  .header h3{
-      font-size: 22px;
-  }
-  
-  /* healt options */
-  .level{
-    margin: 30px 0;
-      width: 100%;
-      height: 30px;
-      padding: 10px 20px;
-      align-items: center;
-  }
-  .level ul{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 80px;
-      font-size: 22px;
-  }
-  .level li{
-      list-style: none;
-      position: relative;
-  }
-  .level a{
-      text-decoration: none;
-      color: var(--color);
-  }
-  .level a::after{
-      content: "";
-      width: 0%;
-      height: 3px;
-      background: var(--h-color);
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      transition: 0.2s all linear;
-  }
-  .level a:hover::after{
-     width: 100%;
-  }
-  
- 
- 
+.navbar button {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid var(--color);
+  background-color: transparent;
+  color: var(--color);
+  padding: 8px;
+  font-weight: 550;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease all;
+  z-index: 1;
+  display: inline-block;
+}
+.navbar button::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--h-color);
+  z-index: -1;
+}
+.navbar button:hover {
+  border: none;
+}
+.navbar button:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.navbar button:active {
+  transform: scale(0.9);
+}
+form {
+  background: #191a1d;
+  color: var(--color);
+  padding: 30px;
+  margin: 2rem;
+  border-radius: 32px;
+  width: 35%;
+  box-shadow: 0 0 3px #000000;
+  line-height: 25px;
+}
+input[type="radio"] {
+  border-radius: none;
+}
+input[type="text"],
+select {
+  color: var(--color);
+  font-size: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: inset 4px 4px 4px black;
+  border-radius: 25px;
+  background-clip: padding-box;
+  align-items: center;
+}
+select option {
+  color: var(--color);
+  background-color: var(--grid-color);
+}
+input:focus {
+  padding-bottom: 15px;
+}
+input::placeholder,
+select::placeholder {
+  color: #a8a7a4;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+input:focus::placeholder,
+select::placeholder {
+  color: var(--color);
+}
+select {
+  width: 90%;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+label {
+  margin-bottom: 0.6rem;
+  margin-right: 0.4rem;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: Segoe UI;
+  color: var(--color);
+}
+.main {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+}
+.main-box {
+  background-image: url(Assests/images/bg-health.jpeg);
+  height: 90vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* Nav bar section */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 15px 10px 0;
+  background-color: transparent;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar.scroll-up {
+  background-color: var(--bg-color);
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.navbar ul img {
+  width: 150px;
+  padding: 15px;
+}
+.navbar li {
+  list-style: none;
+  position: relative;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: var(--color);
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+.navbar li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: var(--h-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.2s all linear;
+}
+.navbar li a:hover::after {
+  width: 100%;
+}
+.logo-li a:hover::after {
+  width: 0 !important;
+}
+.header {
+  padding: 25px 10px 0 20px;
+  color: var(--color);
+  margin-bottom: 15px;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.header h3 {
+  font-size: 22px;
+}
+
+/* healt options */
+.level {
+  margin: 30px 0;
+  width: 100%;
+  height: 30px;
+  padding: 10px 20px;
+  align-items: center;
+}
+.level ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 80px;
+  font-size: 22px;
+}
+.level li {
+  list-style: none;
+  position: relative;
+}
+.level a {
+  text-decoration: none;
+  color: var(--color);
+}
+.level a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: var(--h-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.2s all linear;
+}
+.level a:hover::after {
+  width: 100%;
+}
 
 /* BMI */
 #bmi-result,
@@ -215,93 +256,92 @@
 }
 
 #bmi-calculator ul {
-    padding-left: 2rem;
-  }
-
-  .page {
-    padding: 30px 10%;
-    text-align: center;
-  }
-
-  .page {
-    margin: 0 0 50px 0;
-    background: var(--grid-color);
-    color: var(--color);
-    border-radius: 20px;
-  }
-
-  .page h1 {
-    color: var(--h-color);
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-  }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    align-items: baseline;
-  }
-  .btn {
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1.25rem;
-    padding: 0.6rem 2rem;
-    border-radius: 16px;
-    letter-spacing: 0.5px;
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--color);
-    border: none;
-    background: var(--h-box);
-    display: inline-block;
-    position: relative;
-    transition: 0.3s ease all;
-    z-index: 1;
-  }
-  .btn::before{
-    transition: 0.5s all ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: "";
-    background-color: var(--h-color);
-    z-index: -1;
-    border-radius: 16px;
+  padding-left: 2rem;
 }
-.btn:hover{
+
+.page {
+  padding: 30px 10%;
+  text-align: center;
+}
+
+.page {
+  margin: 0 0 50px 0;
+  background: var(--grid-color);
+  color: var(--color);
+  border-radius: 20px;
+}
+
+.page h1 {
+  color: var(--h-color);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  align-items: baseline;
+}
+.btn {
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.6rem 2rem;
+  border-radius: 16px;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color);
+  border: none;
+  background: var(--h-box);
+  display: inline-block;
+  position: relative;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+.btn::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--h-color);
+  z-index: -1;
+  border-radius: 16px;
+}
+.btn:hover {
   border: none;
 }
-.btn:hover::before{
+.btn:hover::before {
   transition: 0.5s all ease;
   left: 0;
   right: 0;
   opacity: 1;
 }
-.btn:active{
+.btn:active {
   transform: scale(0.9);
 }
-.btn-last{
+.btn-last {
   width: 200px !important;
 }
-  /* calorie */
-  
-  #caloric-needs ul {
-    margin-left: 2rem;
-    color: #d9d9d9;
-  }
-  
-  #male,
-  #female {
-    width: 10%;
-  }
+/* calorie */
 
-  /* exercise guide */
-  #exercise-guide select {
-    width: 30%;
-  }
- 
+#caloric-needs ul {
+  margin-left: 2rem;
+  color: #d9d9d9;
+}
+
+#male,
+#female {
+  width: 10%;
+}
+
+/* exercise guide */
+#exercise-guide select {
+  width: 30%;
+}

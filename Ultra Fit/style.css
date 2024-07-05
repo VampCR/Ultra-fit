@@ -8,25 +8,27 @@
   --bg-color: #242222;
   --h-color: #faab19;
   --h-box: #f5d496;
-  --grid-color:#2d2b2b;
+  --grid-color: #2d2b2b;
+  --btn-color: #ffffff33;
 }
 body {
+  padding: 0;
+  margin: 0;
   background: var(--bg-color);
   font-family: Segoe UI;
-  overflow-x:hidden;
 }
 .main {
   height: 90vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
 }
 .main-box {
-  background-image: url(Assests/images/nig-img.jpg);
+  background-image: url(Assests/images/gym-guy-transformed.jpeg);
   height: 90vh;
-  width: 100vw;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   filter: brightness(0.8);
   position: absolute;
   top: 0;
@@ -36,18 +38,63 @@ body {
   z-index: -1;
 }
 /* Nav bar */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 0;
-    background-color: transparent;
-    transform: translateY(0);
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    z-index: 1000;
+.navbar button {
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid var(--color);
+  background-color: transparent;
+  color: var(--color);
+  padding: 8px;
+  font-weight: 550;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease all;
+  z-index: 1;
+  display: inline-block;
 }
-.navbar.scroll-up{
-    background-color: var(--bg-color);
+.navbar button::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--h-color);
+  z-index: -1;
+}
+.navbar button:hover {
+  border: none;
+}
+.navbar button:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.navbar button:active {
+  transform: scale(0.9);
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 15px 10px 0;
+  background-color: transparent;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar.scroll-up {
+  background-color: var(--bg-color);
 }
 .navbar ul {
   display: flex;
@@ -69,407 +116,557 @@ body {
   letter-spacing: 2px;
   font-size: 15px;
 }
-.navbar a::after{
-    content: "";
-    width: 0%;
-    height: 3px;
-    background: var(--h-color);
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    transition: 0.2s all linear;
-
+.navbar a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: var(--h-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.2s all linear;
 }
 .navbar a:hover::after {
-    width: 100%;
+  width: 100%;
 }
-.logo-li a:hover::after{
-    width: 0 !important;
+.logo-li a:hover::after {
+  width: 0 !important;
 }
-
 
 /* Main Body */
-.header{
-    padding: 25px 10px 0 20px;
-    color: var(--color);
-    margin-bottom: 15px;
+
+.header {
+  padding: 25px 10px 0 20px;
+  color: var(--color);
+  margin-bottom: 15px;
 }
-h1, h2, h3{
-    font-weight: 500;
-    letter-spacing: 2px;
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  letter-spacing: 2px;
 }
-.header h3{
-    font-size: 22px;
+.header h3 {
+  font-size: 22px;
 }
 
 /* Grid challenge box */
-.card-challenge{
-    margin: 0 0 20px 0;
-    width: 100%;
-    height: 60vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    align-items: center;
-    justify-items: center;
-    background-color: var(--grid-color);
-    border-radius: 20px;
+.card-challenge {
+  margin: 0 0 20px 0;
+  width: 100%;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--grid-color);
+  border-radius: 20px;
 }
-.card{
-    width: 80%;
-    height: 80%;
-border-radius: 10px;
-color: var(--color);
-padding: 20px;
+.card {
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  color: var(--color);
+  padding: 20px;
 }
-.box1{
-    background-image: url(/Assests/images/full-body-card.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.box1 {
+  background-image: url(/Assests/images/full-body-card.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.head-card1 {
+  width: 200px;
+}
+.card button {
+  margin: 200px 30px 20px 30px;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--color);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 90%;
+  border: 1px solid var(--color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+.card button::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--h-color);
+  z-index: -1;
+}
+.card button:hover {
+  border: none;
+}
+.card button:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.card button:active {
+  transform: scale(0.9);
+}
+.box2 {
+  background-image: url(/Assests/images/lower-body-card.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-}
-.head-card1{
-    width: 200px;
-}
-.card button{
-    margin: 200px 30px 20px 30px;
-    padding: 10px;
-    background-color:transparent;
-    color: var(--color);
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    width: 90%;
-    border: 1px solid var(--color);
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.3s ease all;
-    z-index: 1;
-}
-.card button::before{
-    transition: 0.5s all ease;
-    position: absolute;
-    border-radius: 50px;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: "";
-    background-color: var(--h-color);
-    z-index: -1;
-}
-.card button:hover{
-    border: none;   
-}
-.card button:hover::before{
-    transition: 0.5s all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
-}
-.card button:active{
-    transform: scale(0.9);
-}
-.box2{
-    background-image: url(/Assests/images/lower-body-card.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.card:hover{
-    box-shadow: 0 0 0 1px var(--h-box);
+.card:hover {
+  box-shadow: 0 0 0 1px var(--h-box);
 }
 
 /* Difficulty levels Bar*/
-.level{
-    margin: 0 0 30px 0;
-    width: 100%;
-    height: 30px;
-    padding: 10px 20px;
+.level {
+  margin: 0 0 30px 0;
+  width: 100%;
+  height: 30px;
+  padding: 10px 20px;
 }
-.level ul{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 80px;
-    font-size: 22px;
+.level ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 80px;
+  font-size: 22px;
 }
-.level li{
-    list-style: none;
-    position: relative;
+.level li {
+  list-style: none;
+  position: relative;
 }
-.level a{
-    text-decoration: none;
-    color: var(--color);
+.level a {
+  text-decoration: none;
+  color: var(--color);
 }
-.level a::after{
-    content: "";
-    width: 0%;
-    height: 3px;
-    background: var(--h-color);
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    transition: 0.2s all linear;
+.level a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: var(--h-color);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.2s all linear;
 }
-.level a:hover::after{
-   width: 100%;
+.level a:hover::after {
+  width: 100%;
 }
 
 /* Beginner Grid */
-.level-grid{
-    width: 100vw;
-    height: 600px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    background-color: var(--grid-color);
-    border-radius: 20px;
+.level-grid {
+  width: 100%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--grid-color);
+  border-radius: 30px;
 }
 
-.l-box{
-    width: 85%;
-    height: 85%;
-    padding: 15px;  
+.l-box {
+  width: 85%;
+  height: 85%;
+  padding: 15px;
 }
-.b-abs{
-    border-radius: 10px;
-    background-image: url(/Assests/images/beginner-abs.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.b-abs {
+  border-radius: 10px;
+  background-image: url(/Assests/images/beginner-abs.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.level-btn{
-    margin: 90px 0 0 20px;
-    width: 90%;
-    padding: 8px;
-    background-color:transparent;
-    color: var(--color);
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 2px;
-    border: 1px solid var(--color);
-    border-radius: 50px;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.3s ease all;
-    z-index: 1;
+.level-btn {
+  margin: 90px 0 0 20px;
+  width: 90%;
+  padding: 8px;
+  background-color: transparent;
+  color: var(--color);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border: 1px solid var(--color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s ease all;
+  z-index: 1;
 }
-.level-btn::before{
-    transition: 0.5s all ease;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    right: 50%;
-    bottom: 0;
-    opacity: 0;
-    content: "";
-    background-color: var(--h-color);
-    z-index: -1;
-    border-radius: 50px;
+.level-btn::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--h-color);
+  z-index: -1;
+  border-radius: 50px;
 }
-.level-btn:hover{
-    border: none;
+.level-btn:hover {
+  border: none;
 }
-.level-btn:hover::before{
-    transition: 0.5s all ease;
-    left: 0;
-    right: 0;
-    opacity: 1;
+.level-btn:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
 }
-.level-btn:active{
-    transform: scale(0.9);
+.level-btn:active {
+  transform: scale(0.9);
 }
-.back-btn{
-    margin: 60px 0 0 20px !important;
+.back-btn {
+  margin: 60px 0 0 20px !important;
 }
-.level-img{
-    margin-bottom: 20px;
+.level-img {
+  margin-bottom: 20px;
 }
-.level-img img{
-width: 15px;
+.level-img img {
+  width: 15px;
 }
-.l-box h2{
-    font-size: 22px;
-    color: var(--color);
-    font-weight: 800 !important;
-    text-shadow: 0 0 3px black;
+.l-box h2 {
+  font-size: 22px;
+  color: var(--color);
+  font-weight: 800 !important;
+  text-shadow: 0 0 3px black;
 }
-.l-box h3{
-    font-size: 15px !important;
-    color: var(--color);
-    text-shadow: 0 0 1px black;
+.l-box h3 {
+  font-size: 15px !important;
+  color: var(--color);
+  text-shadow: 0 0 1px black;
 }
-.b-chest{
-    border-radius: 10px;
-    background-image: url(/Assests/images/beginner-chest.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* background-position:center; */
+.b-chest {
+  border-radius: 10px;
+  background-image: url(/Assests/images/beginner-chest.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position:center; */
 }
-.b-back{
-    border-radius: 10px;
-    background-image: url(/Assests/images/beginner-back.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.b-back {
+  border-radius: 10px;
+  background-image: url(/Assests/images/beginner-back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.b-leg{
-    border-radius: 10px;
-    background-image: url(/Assests/images/beginner-leg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.b-leg {
+  border-radius: 10px;
+  background-image: url(/Assests/images/beginner-leg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.b-arms{
-    border-radius: 10px;
-    background-image: url(/Assests/images/beginner-haat.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.b-arms {
+  border-radius: 10px;
+  background-image: url(/Assests/images/beginner-haat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.l-box:hover{
-    box-shadow: 0 0 0 1px var(--h-box);
+.l-box:hover {
+  box-shadow: 0 0 0 1px var(--h-box);
 }
-#intermediate{
-    margin: 10px 0;
-padding: 20px 0;
+#intermediate {
+  margin: 10px 0;
+  padding: 20px 0;
 }
-.i-head, .a-head{
-    margin-bottom:20px ;
-    color: var(--color);
-    font-size: 22px;
-    padding: 20px 0 0 20px;
-    align-items: center;
+.i-head,
+.a-head {
+  margin-bottom: 20px;
+  color: var(--color);
+  font-size: 22px;
+  padding: 20px 0 0 20px;
+  align-items: center;
 }
-.i-abs{
-    background-image: url(/Assests/images/intermidate-abs.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.i-abs {
+  background-image: url(/Assests/images/intermidate-abs.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.i-chest{
-    background-image: url(/Assests/images/intermidate-chest.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.i-chest {
+  background-image: url(/Assests/images/intermidate-chest.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.i-back{
-    background-image: url(/Assests/images/intermidate-back.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.i-back {
+  background-image: url(/Assests/images/intermidate-back.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.i-leg{
-    background-image: url(/Assests/images/intermidate-legs.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.i-leg {
+  background-image: url(/Assests/images/intermidate-legs.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.i-arm{
-    background-image: url(/Assests/images/intermidate-haat.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.i-arm {
+  background-image: url(/Assests/images/intermidate-haat.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* advanced */
-.a-abs{
-    background-image: url(/Assests/images/advance-abs.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.a-abs {
+  background-image: url(/Assests/images/advance-abs.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.a-chest{
-    background-image: url(/Assests/images/advance-chest.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.a-chest {
+  background-image: url(/Assests/images/advance-chest.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.a-back{
-    background-image: url(/Assests/images/advance-back.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.a-back {
+  background-image: url(/Assests/images/advance-back.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.a-leg{
-    background-image: url(/Assests/images/advance-legs.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.a-leg {
+  background-image: url(/Assests/images/advance-legs.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.a-arm{
-    background-image: url(/Assests/images/advance-haat.jpg);
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center;
+.a-arm {
+  background-image: url(/Assests/images/advance-haat.jpg);
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* About us section */
-.about-us{
-    margin: auto;
-    margin-top: 60px !important;
-    width: 95vw;
-    height: auto;
-    background-color: #df9100;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    text-align: center;
-    padding: 0 0 20px 0;
+.about-us {
+  margin: auto;
+  margin-top: 60px !important;
+  width: 95vw;
+  height: auto;
+  background-color: #df9100;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  text-align: center;
+  padding: 0 0 20px 0;
 }
-.about-us h2{
-padding-top: 30px;
-margin-bottom: 10px;
-    color: var(--color);
-    font-size: 35px;
-    font-weight: 700;
-    letter-spacing: 5px;
+.about-us h2 {
+  padding-top: 30px;
+  margin-bottom: 10px;
+  color: var(--color);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 5px;
 }
-.about-box{
-    margin: 0 0 0 72px;
-    width: 90%;
-    height:650px;
-    background-color: transparent;
-    border: 4px solid var(--color);
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    align-items: center;
-    padding: 15px;
+.about-box {
+  margin: 0 0 0 72px;
+  width: 90%;
+  height: 650px;
+  background-color: transparent;
+  border: 4px solid var(--color);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  padding: 15px;
 }
-.about-box img{
-    align-self: baseline !important;
-    margin: 8px 25px;
-    width: 128px;
+.about-box img {
+  align-self: baseline !important;
+  margin: 8px 25px;
+  width: 128px;
 }
-.para p{
-    color:var(--color);
-    font-size: 20px;
-    letter-spacing: 2px;
-    font-weight: 400;
-    text-align: justify;
+.para p {
+  color: var(--color);
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-align: justify;
 }
-.para strong{
-    font-weight: 700;
+.para strong {
+  font-weight: 700;
 }
-.para h4{
-    font-size: 25px;
-    color: var(--color);
+.para h4 {
+  font-size: 25px;
+  color: var(--color);
+}
+.a-back button {
+  margin-top: 61px !important;
+}
+
+/* login page */
+.modal-content h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom:20px ;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #00000066;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 7% auto;
+  padding: 30px 40px;
+  border: 2px solid #ffffff33;
+  width: 420px;
+  border-radius: 12px;
+  position: relative;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  color: var(--color);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* button form */
+.login-form button,
+.signup-form button {
+  margin: 15px 0;
+  width: 100%;
+  height: 45px;
+  background: var(--color);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #0000001a;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--bg-color);
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s ease all;
+  z-index: 1;
+}
+.login-form button::before,
+.signup-form button::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--h-color);
+  z-index: -1;
+}
+.login-form button:hover,
+.signup-form button:hover {
+  background-color: var(--h-color);
+  color: var(--color);
+}
+.login-form button:hover::before,
+.signup-form button:hover::before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+.login-form button:active,
+.signup-form button:active {
+  transform: scale(0.9);
+}
+
+.login-form p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login-form a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+/* input */
+.modal-content form input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px solid var(--btn-color);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--color);
+  padding: 15px 45px 15px 20px;
+  margin-bottom: 20px;
+}
+.modal-content .inputbox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0;
+}
+.modal-content form input::placeholder {
+  color: var(--color);
+}
+.modal-content form i {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translate(-50%);
+  font-size: 20px;
 }
