@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultra Fit</title>
+    <link rel="stylesheet" href="shop.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="shortcut icon"
+      href="/Assests/More/ultra-fit-logoo.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <!-- Nav-bar -->
+    <div class="main">
+      <div class="navbar">
+        <ul>
+          <li class="logo-li">
+            <a href="index.html">
+              <img
+                src="/Assests/More/ultra-fit-main-logo.png"
+                alt="Ultra-Fit"
+              />
+            </a>
+          </li>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="health.html">HEALTH</a></li>
+          <li><a href="shop.html">SHOP</a></li>
+          <li><a href="index.html#about-us">ABOUT US</a></li>
+        </ul>
+        <div class="form">
+          <a href="cart.html" class="cart-logo">
+            <img src="/Assests/More/cart.png" alt="cart">
+          </a>
+          
+          <button id="loginBtn" class="login-btn">LOGIN</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- form  -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="loginClose">&times;</span>
+        <form id="loginForm" class="login-form">
+          <h2>Login</h2>
+          <div class="inputbox">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username"
+              required
+            />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <button type="submit">Login</button>
+          <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="signupClose">&times;</span>
+        <form id="signupForm" class="signup-form">
+          <h2>Sign Up</h2>
+          <div class="inputbox">
+            <input
+              type="email"
+              id="signupEmail"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <i class="bx bxl-gmail"></i>
+          </div>
+          <div class="inputbox">
+            <input
+              type="text"
+              id="signupUsername"
+              name="username"
+              placeholder="Username"
+              required
+            />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              id="signupPassword"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <div class="inputbox">
+            <input
+              type="password"
+              id="signupConfirmPassword"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              required
+            />
+            <i class="bx bxs-lock-open-alt"></i>
+          </div>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <!-- main body -->
+    <!-- Difficulty levels Bar-->
+    <div class="select-bar">
+      <ul>
+        <li><a href="#protein">Protein Powder</a></li>
+        <li><a href="#dumbbells">Dumbbells</a></li>
+        <li><a href="#others">Others</a></li>
+      </ul>
+    </div>
+
+    <!--products-grid  -->
+    <section id="protein">
+      <h3 class="p-head">Protein Powder</h3>
+      <div class="pro-grid">
+        <a class="pro pow1" href="/pro1.html">
+          <div class="name">
+            <h3>Optimum Nutrition Gold Standard</h3>
+          </div>
+        </a>
+        <a class="pro pow2" href="/pro2.html">
+           <div class="name">
+              <h3>MUSCLEBLAZE Biozyme Performance</h3>
+            </div>
+        </a>
+        <a class="pro pow3" href="/">
+           <div class="name">
+              <h3>Nakpro PERFORM Supplement Powder Whey Protein</h3>
+            </div>
+        </a>
+        <a class="pro pow4" href="/">
+           <div class="name">
+              <h3>Wellcore Micronised Creatine Monohydrate</h3>
+            </div>
+        </a>
+        <a class="pro pow5" href="/">
+           <div class="name">
+              <h3>DNUTRIXN Advance High Protein Mass Gainer</h3>
+            </div>
+        </a>
+        <a class="pro pow6" href="/">
+           <div class="name">
+              <h3>BIGMUSCLES NUTRITION Premium Gold</h3>
+            </div>
+        </a>
+        <a class="pro pow7" href="/">
+           <div class="name">
+              <h3>MUSCLEBLAZE Weight /Mass Gainers Weight Gainers</h3>
+            </div>
+        </a>
+        <a class="pro pow8" href="/">
+           <div class="name">
+              <h3>AS-IT-IS Nutrition Concentrate </h3>
+            </div>
+        </a>
+      </div>
+    </section>
+    <!-- dumbbells -->
+    <section id="dumbbells">
+      <h3 class="p-head">Dumbbells</h3>
+      <div class="pro-grid dum-grid">
+        <a class="pro dum1" href="/pro3.html">
+          <div class="name">
+            <h3>FitFreaks PVC ,Home Gym 5KGS</h3>
+          </div>
+        </a>
+        <a class="pro dum2" href="/">
+           <div class="name">
+              <h3>RUBX RUBBER COATED ROUND DUMBBELLS 15KG</h3>
+            </div>
+        </a>
+        <a class="pro dum3" href="/">
+           <div class="name">
+              <h3>fitwell Fitness with 2 Rods 20KG</h3>
+            </div>
+        </a>
+        <a class="pro dum4" href="/">
+           <div class="name">
+              <h3>JASMINE 3 In 1 Convertible & Barbell 10KG</h3>
+            </div>
+        </a>
+      </div>
+    </section>
+    <!-- others -->
+    <section id="others">
+      <h3 class="p-head">Others</h3>
+      <div class="pro-grid other-grid">
+        <a class="pro other1" href="/pro4.html">
+          <div class="name">
+            <h3>BoldFire Combo Grip Strengther Trainer Kit</h3>
+          </div>
+        </a>
+        <a class="pro other2" href="/">
+           <div class="name">
+              <h3>iamalot Combo Pack of3 D-Hand Grip with Finger Exerciser</h3>
+            </div>
+        </a>
+        <a class="pro other3" href="/">
+           <div class="name">
+              <h3>Shopeleven Resistant Band set of 5 Tubes</h3>
+            </div>
+        </a>
+        <a class="pro other4" href="/">
+           <div class="name">
+              <h3>HORSE FIT Tummy Trimmer and Sweat Slim Belt</h3>
+            </div>
+        </a>
+      </div>
+    </section>
+  </body>
+  <script src="script.js"></script>
+</html>
